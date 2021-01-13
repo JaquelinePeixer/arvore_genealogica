@@ -36,9 +36,9 @@
 
                         if ($dataNasc && $localNasc) { ?>
                             <span><?php echo $dataNasc . ', em '  . $localNasc; ?></span>
-                        <?php } elseif ($localNasc && !$dataNasc ) { ?>
+                        <?php } elseif ($localNasc && !$dataNasc) { ?>
                             <?php the_sub_field('local_de_nascimento'); ?>
-                        <?php } elseif (!$localNasc && $dataNasc ) { ?>
+                        <?php } elseif (!$localNasc && $dataNasc) { ?>
                             <?php the_sub_field('data_de_nascimento'); ?>
                         <?php }; ?>
                     </td>
@@ -71,14 +71,22 @@
                 <tr>
                     <td>Pai</td>
                     <td>
-                        <a href="<?php the_sub_field('link_pai'); ?>"><?php the_sub_field('nome_do_pai'); ?></a>
+                        <?php if (get_sub_field('link_pai')) { ?>
+                            <a href="<?php the_sub_field('link_pai'); ?>"><?php the_sub_field('nome_do_pai'); ?></a>
+                        <?php } else { ?>
+                            <?php the_sub_field('nome_do_pai'); ?>
+                        <?php }; ?>
                     </td>
                 </tr>
 
                 <tr>
                     <td>Mãe</td>
                     <td>
-                        <a href="<?php the_sub_field('link_mae'); ?>"><?php the_sub_field('nome_da_mae'); ?></a>
+                        <?php if (get_sub_field('link_mae')) { ?>
+                            <a href="<?php the_sub_field('link_mae'); ?>"><?php the_sub_field('nome_da_mae'); ?></a>
+                        <?php } else { ?>
+                            <?php the_sub_field('nome_da_mae'); ?>
+                        <?php }; ?>
                     </td>
                 </tr>
                 <?php if (get_sub_field('data_do_casamento')) { ?>
@@ -103,8 +111,14 @@
                         <?php
                         $link = get_sub_field('link_conjuge_01');
                         $link = $link->guid;
-                        ?>
-                        <a href="<?php echo $link; ?>"><?php the_sub_field('nome_do_conjuge_01'); ?></a>
+
+                        if ($link) { ?>
+                            <a href="<?php echo $link; ?>"><?php the_sub_field('nome_do_conjuge_01'); ?></a>
+                        <?php } else { ?>
+                            <?php the_sub_field('nome_do_conjuge_01'); ?>
+                        <?php }; ?>
+
+
                     </td>
                 </tr>
 
@@ -134,8 +148,12 @@
                             <?php
                             $link = get_sub_field('link_conjuge_02');
                             $link = $link->guid;
-                            ?>
-                            <a href="<?php echo $link; ?>"><?php the_sub_field('nome_do_conjuge_02'); ?></a>
+
+                            if ($link) { ?>
+                                <a href="<?php echo $link; ?>"><?php the_sub_field('nome_do_conjuge_02'); ?></a>
+                            <?php } else { ?>
+                                <?php the_sub_field('nome_do_conjuge_02'); ?>
+                            <?php }; ?>
                         </td>
                     </tr>
                     <tr>
