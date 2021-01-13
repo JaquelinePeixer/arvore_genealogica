@@ -1,0 +1,216 @@
+/*
+Theme Name: Árvore genealógica
+Author: Agência Girafa Digital
+Author URI: http://www.girafa.digital
+Description: Site para apresentar a Árvore genealógica da familia peixer e bettoni
+Version: 1.0
+Text Domain: arvore_genealogica
+*/
+
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-size: 15px;
+	font-family: "Open Sans", sans-serif;
+	color: #707070;
+	background-color: #f5f5f5;
+}
+
+h1 {
+	font-size: 32px;
+	font-weight: 700;
+	color: #302b3f;
+	margin: 0;
+}
+
+h2 {
+	font-size: 20px;
+	color: #707070;
+	margin: 4px;
+}
+
+p {
+	font-size: 17px;
+	color: #707070;
+	margin: 4px;
+}
+
+.clear {
+	clear: both;
+}
+
+.displayFlex {
+	display: flex;
+	justify-content: center;
+}
+
+footer {
+	background-color: #302b3f;
+}
+
+.displayfooter p {
+	color: #fff;
+	padding: 21px;
+	text-align: center;
+}
+
+.bgTabela {
+	margin: 30px;
+	padding: 28px;
+	border-radius: 10px;
+	background-color: #fff;
+}
+
+table {
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+td {
+	border: 1px solid #a8a8a8;
+	padding: 6px;
+}
+
+td:first-child {
+	width: 174px;
+	background-color: #302b3f;
+	color: #fff;
+}
+
+.menuDesktop {
+	display: flex;
+	justify-content: space-between;
+	background-color: #302b3f;
+	align-items: center;
+}
+
+.menuDesktop .logo,
+.menuDesktop nav {
+	padding: 10px;
+}
+
+.menuDesktop p,
+.menuDesktop a {
+	color: #fff;
+}
+
+.menuDesktop p {
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.menuDesktop a {
+	text-decoration: none;
+}
+
+.menuDesktop .logo {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.menuDesktop nav {
+	display: flex;
+	gap: 28px;
+	align-items: center;
+}
+
+.logo img {
+	width: auto;
+	height: 46px;
+}
+
+.displayCategorias {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 45px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.displayCategorias a {
+	text-decoration: none;
+	background-color: #302b3f;
+	color: #fff;
+	padding: 28px 37px;
+	border-radius: 10px;
+	font-size: 19px;
+}
+
+.listagemNomes {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 13px;
+	margin-top: 20px;
+}
+
+.listagemNomes a,
+td a {
+	color: #707070;
+}
+.identificacao {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 20px;
+}
+
+.bandeira {
+	width: auto;
+	height: 23px;
+	border: 1px solid #dfdfdf;
+}
+
+.aNomes {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.aNomes img {
+	height: 16px;
+}
+
+.organograma{
+	width: 100%;
+    height: auto;
+}
+
+/****************************
+******** TELA DESKTOP *******
+*****************************/
+
+@media screen and (min-width: 1200px) {
+	.wrap {
+		width: 1100px;
+		margin: 0 auto;
+	}
+}
+
+/****************************
+******** TELA TABLET ********
+*****************************/
+@media screen and (min-width: 755px) and (max-width: 1199px) {
+	.wrap {
+		width: 700px;
+		margin: 0 auto;
+	}
+}
+
+/****************************
+******** TELA MOBILE ********
+*****************************/
+@media screen and (max-width: 754px) {
+	.displayCategorias {
+		grid-template-columns: 1fr;
+		gap: 28px;
+	}
+
+	td:first-child {
+		width: 78px;
+	}
+
+	h1 {
+		font-size: 26px;
+	}
+}
