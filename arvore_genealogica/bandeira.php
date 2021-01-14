@@ -17,4 +17,8 @@ if ($valor === '"BR"') { ?>
     <img class="bandeira" src="<?php bloginfo('template_directory'); ?>/img/bandeira/Prussia.svg">
 <?php  } elseif ($valor === '"AU"') { ?>
     <img class="bandeira" src="<?php bloginfo('template_directory'); ?>/img/bandeira/Austria.svg">
+<?php  } elseif ($valor === '"ES"') { ?>
+    <img class="bandeira" src="<?php bloginfo('template_directory'); ?>/img/bandeira/Espanha.svg">
+<?php  } elseif ($valor === '"FR"') { ?>
+    <img class="bandeira" src="<?php bloginfo('template_directory'); ?>/img/bandeira/Franca.svg">
 <?php  } ?>

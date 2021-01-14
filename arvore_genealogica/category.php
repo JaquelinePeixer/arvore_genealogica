@@ -7,9 +7,20 @@
         <h2>Todos os cadastros existentes:</h2>
         <div class="listagemNomes">
 
-            <?php if (have_posts()) {
-                while (have_posts()) {
-                    the_post();
+            <?php
+
+            $categories = get_the_category($post->ID);
+            $catName = $categories[0]->name;
+
+            $args = array(
+                'posts_per_page' => 99999,
+                'category_name' => $catName
+            );
+
+            $the_query = new WP_Query($args);
+
+            if ($the_query->have_posts()) :
+                while ($the_query->have_posts()) : $the_query->the_post();
             ?>
                     <a class="aNomes" href="<?php the_permalink(); ?>">
 
@@ -35,8 +46,9 @@
                         )
                     </a>
             <?php
-                } // end while
-            } // end if
+                endwhile;
+            endif;
+
             ?>
         </div>
     </div>
@@ -46,8 +58,8 @@
 <div class="wrap" style="margin-top: 30px;">
     <div class="bgTabela">
 
-        <?php        
-        $categories = get_the_category($post->ID);   
+        <?php
+        $categories = get_the_category($post->ID);
         $slug = $categories[0]->slug;
 
         if ($slug === "francisco-bettoni-sobrinho") { ?>
