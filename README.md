@@ -17,6 +17,3 @@ Para que o cadastro as informações seja facilitado foi inserido o plugin Advan
 3. Instale o plugin [Advanced Custom Fields](https://www.advancedcustomfields.com/)
 4. Importe no plugin ACF o grupo de campos da pasta (arquivo único)
 5. Adicione um novo post e comece a utilizar
-
-
-@all-contributors bot
